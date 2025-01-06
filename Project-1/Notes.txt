@@ -1,0 +1,8 @@
+Thinking like a programmer 
+understand the project 
+things i need/do in this project 
+1. 9 keys arrange in single line or order
+2. set background
+3. i want to play sound when i press any key 
+4. add number functionlaity in the keys like whenever i press 1-9 keys these keys will play accordingly
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/✅" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f4f4f4;
+      }
+      .keys {
+        display: flex;
+        gap: 10px;
+      }
+      .key {
+        border: 2px solid #000;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        background: #fff;
+        transition: transform 0.1s ease;
+      }
+      .key.playing {
+        transform: scale(1.1);
+        background: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">clap</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tink</span>
+      </div>
+    </div>
+
+    <audio data-key="65" src="Sounds/boom.wav"></audio>
+    <audio data-key="83" src="Sounds/hihat.wav"></audio>
+    <audio data-key="68" src="Sounds/kick.wav"></audio>
+    <audio data-key="70" src="Sounds/openhat.wav"></audio>
+    <audio data-key="71" src="Sounds/boom.wav"></audio>
+    <audio data-key="72" src="Sounds/ride.wav"></audio>
+    <audio data-key="74" src="Sounds/snare.wav"></audio>
+    <audio data-key="75" src="Sounds/tom.wav"></audio>
+    <audio data-key="76" src="Sounds/tink.wav"></audio>
+
+    <script>
+      // Function to handle key press and play sound
+      function playSound(e) {
+        // Get the audio and corresponding key div
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+
+        // If no audio is found, exit
+        if (!audio) return;
+
+        // Play the audio from the start
+        audio.currentTime = 0;
+        audio.play();
+
+        // Add the "playing" class to the key
+        key.classList.add("playing");
+
+        // Remove the "playing" class after a short delay
+        setTimeout(() => key.classList.remove("playing"), 200);
+      }
+
+      // Attach the event listener for keydown
+      window.addEventListener("keydown", playSound);
+    </script>
+  </body>
+</html>
