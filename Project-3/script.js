@@ -8,11 +8,11 @@ blur.addEventListener('input', (event) => {
 });
 
 spacing.addEventListener('input', (event) => {
-    const blurValue = event.target.value; // Get the current value of the range slider
-    image.style.filter = `blur(${blurValue}px)`; // Update the blur value dynamically
+    const spaceValue = event.target.value; // Get the current value of the range slider
+    image.style.paddingLeft = `${spaceValue}px`; // Update the padding dynamically
 });
 
 color.addEventListener('input', (event) => {
-    const blurValue = event.target.value; // Get the current value of the range slider
-    image.style.filter = `blur(${blurValue}px)`; // Update the blur value dynamically
+    const colorValue = event.target.value; // Get the current value of the input
+    imgHolder.style.backgroundColor = `${colorValue}`; // Update the background color dynamically
 });
