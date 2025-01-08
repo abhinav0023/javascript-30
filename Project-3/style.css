@@ -1,0 +1,6 @@
+#image {
+    width: 300px;
+    height: auto;
+    filter: blur(5px); /* Initial blur value */
+    transition: filter 0.3s; /* Smooth transition for the blur effect */
+}

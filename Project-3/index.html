@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playing with CSS variable</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Update CSS variables with Javascript</h1>
+    <div id="controls">
+      <label for="spacing">Space</label>
+      <input
+        id="spacing"
+        type="range"
+        name="spacing"
+        min="10"
+        max="200"
+        value="10"
+        data-sizing="px"
+      />
+
+      <label for="blur">Blur:</label>
+      <input
+        id="blur"
+        type="range"
+        name="blur"
+        min="0"
+        max="25"
+        value="10"
+        data-sizing="px"
+      />
+
+      <label for="color">Color:</label>
+      <input type="color" id="color" name="color" value="#ff0000" />
+    </div>
+    <img id="image" src="https://images.unsplash.com/photo-1736210811075-7509d5023a4a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px">
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

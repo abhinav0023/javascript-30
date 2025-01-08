@@ -16,7 +16,7 @@ function updateClock() {
     document.getElementById('min').style.transform = `translate(-50%, -100%) rotate(${minuteAngle}deg)`;
     document.getElementById('hour').style.transform = `translate(-50%, -100%) rotate(${hourAngle}deg)`;
   }
-  
+
   // Call updateClock every second
   setInterval(updateClock, 1000);
   updateClock(); // Initial call to set the time immediately
